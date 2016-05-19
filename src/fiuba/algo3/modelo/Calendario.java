@@ -4,14 +4,12 @@ import java.util.List;
 
 public class Calendario {
 
-    private final ContenedorDePersonas agendaPersonas;
-    private final ContenedorDeRecursos agendaRecursos;
-    private final ContenedorDeEventos agendaEventos;
+    private  ContenedorDePersonas agendaPersonas;
+    private  ContenedorDeRecursos agendaRecursos;
 
     public Calendario (){
         this.agendaPersonas = new ContenedorDePersonas() ;
         this.agendaRecursos = new ContenedorDeRecursos() ;
-        this.agendaEventos = new ContenedorDeEventos() ;
     }
 
     public void agregarPersona(String nombre) {
@@ -22,11 +20,11 @@ public class Calendario {
         this.agendaRecursos.agregar(nombre) ;
     }
 
-    public void agregarEvento(String nombre, List<String> invitados, int i, int i0, int i1, int i2) {
+    public void agregarEvento(String nombre, List<String> invitados, int anio, int mes, int dia, int hora) {
         this.agendaEventos.agregar(nombre) ;
     }
 
-    public void agregarEventoSemanal(String nombre, int i, List<String> invitados, int i0, int i1, int i2, int i3) {
+    public void agregarEventoSemanal(String nombre, int repeticion, List<String> invitados, int anio, int mes, int dia, int hora) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -38,7 +36,7 @@ public class Calendario {
         return this.agendaRecursos.existe(nombre) ;
     }
 
-    public boolean estaOcupado(String nombre, int i, int i0, int i1, int i2) {
+    public boolean estaOcupado(String nombre, int anio, int mes, int dia, int hora) {
         return this.agendaRecursos.existe(nombre) ;
     }
 
