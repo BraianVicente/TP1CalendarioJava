@@ -5,18 +5,39 @@
  */
 package fiuba.algo3.modelo;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+
 /**
  *
  * @author brahvic
  */
 public class ContenedorDePersonas {
-
-    void agregar(String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    
+    private ArrayList<Persona> misPersonas ;
+    
+    public ContenedorDePersonas(){
+        this.misPersonas = new ArrayList<Persona>() {} ;
+    }
+    
+    public void agregar(String nombre) {
+       this.misPersonas.add(new Persona(nombre)) ;
     }
 
-    boolean existe(String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public boolean existe(String nombre) {
+       return this.misPersonas.contains(new Persona(nombre));
+    }
+
+    public void agregarEvento(String nombreEvento, ArrayList<String> invitados, int anio, int mes, int dia, int hora) {
+        invitados.forEach(invitado -> {
+            Persona persona;
+            persona = this.get(invitado);
+            persona.agregarEvento(nombreEvento,anio,mes,dia,hora) ;
+        });
+    }
+    
+    public Persona get(String nombre){
+        return (Persona) this.misPersonas.get(this.misPersonas.indexOf(new Persona(nombre)));
     }
     
 }

@@ -13,7 +13,7 @@ public interface Invitable {
 
     public boolean existeEvento(int anio, int mes, int dia, int hora) ;
     
-    public boolean agregarEvento(int anio, int mes, int dia, int hora) ;
+    public void agregarEvento(String nombreEvento, int anio, int mes, int dia, int hora) ;
     
     public boolean estaOcupado(int anio, int mes, int dia, int hora) ;
         

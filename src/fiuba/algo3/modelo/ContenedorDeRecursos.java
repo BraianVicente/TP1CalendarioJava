@@ -5,18 +5,26 @@
  */
 package fiuba.algo3.modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author brahvic
  */
 public class ContenedorDeRecursos {
 
-    void agregar(String nombre) {
+    private ArrayList<Recurso> misRecursos ;
+
+    public ContenedorDeRecursos(){
+        this.misRecursos = new ArrayList<Recurso>();
+    }
+
+	public void agregar(String nombre) {
+		this.misRecursos.add(new Recurso(nombre));
+    }
+
+    public boolean existe(String nombre) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    boolean existe(String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }

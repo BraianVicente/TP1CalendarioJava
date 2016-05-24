@@ -21,7 +21,6 @@ public class Calendario {
     }
 
     public void agregarEvento(String nombre, List<String> invitados, int anio, int mes, int dia, int hora) {
-        this.agendaEventos.agregar(nombre) ;
     }
 
     public void agregarEventoSemanal(String nombre, int repeticion, List<String> invitados, int anio, int mes, int dia, int hora) {
