@@ -5,6 +5,8 @@
  */
 package fiuba.algo3.modelo;
 
+import java.util.Objects;
+
 /**
  *
  * @author brahvic
@@ -12,9 +14,11 @@ package fiuba.algo3.modelo;
 public class Recurso implements Invitable {
     
     private String nombre ;
+    private ContenedorDeEventos misEventos;
     
     public Recurso(String nombre){
-            this.nombre = nombre ;
+        this.nombre = nombre ;
+        this.misEventos = new ContenedorDeEventos();
     }
     
     @Override
@@ -25,6 +29,13 @@ public class Recurso implements Invitable {
         return this.getNombre().equals(recurso.getNombre());
     }
 
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 97 * hash + Objects.hashCode(this.nombre);
+        return hash;
+    }
+
     
     @Override
     public boolean existeEvento(int anio, int mes, int dia, int hora) {
@@ -33,12 +44,12 @@ public class Recurso implements Invitable {
 
     @Override
     public void agregarEvento(String nombreEvento, int anio, int mes, int dia, int hora) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.misEventos.agregarEvento(nombreEvento, anio, mes, dia, hora);
     }
 
     @Override
     public boolean estaOcupado(int anio, int mes, int dia, int hora) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.misEventos.existeEvento(anio,mes,dia,hora);
     }
 
     private Object getNombre() {

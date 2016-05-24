@@ -134,7 +134,7 @@ public class CalendarioTests {
 	public void test08recursoNoAdmiteSuperposicion() {
 
 		List<String> invitados = new ArrayList<>();
-		invitados.add("juan");
+                invitados.add("juan");
 		invitados.add("proyector");
 
 		Calendario cal = new Calendario();
