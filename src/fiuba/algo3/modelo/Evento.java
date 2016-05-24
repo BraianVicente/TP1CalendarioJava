@@ -14,9 +14,15 @@ import java.util.Date;
 class Evento {
 
     private Date fecha;
+    private String nombreEvento;
 
     public Evento(int anio, int mes, int dia, int hora) {
         this.fecha = new Date(anio,mes,dia,hora,00);
+    }
+
+    Evento(String nombreEvento, int anio, int mes, int dia, int hora) {
+        this.fecha = new Date(anio,mes,dia,hora,00);
+        this.nombreEvento = nombreEvento ;
     }
     
     @Override

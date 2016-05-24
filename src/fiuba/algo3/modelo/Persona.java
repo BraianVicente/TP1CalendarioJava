@@ -6,8 +6,6 @@
 package fiuba.algo3.modelo;
 
 import java.util.Objects;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -45,10 +43,7 @@ public class Persona implements Invitable {
 
     @Override
     public void agregarEvento(String nombreEvento, int anio, int mes, int dia, int hora)  {
-        if (this.estaOcupado(anio,mes,dia,hora)){          
-        } else {
-            this.misEventos.agregarEvento(anio,mes,dia,hora);
-        }
+        this.misEventos.agregarEvento(nombreEvento,anio,mes,dia,hora);
     }
 
     @Override

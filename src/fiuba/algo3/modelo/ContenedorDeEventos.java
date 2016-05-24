@@ -21,13 +21,12 @@ public class ContenedorDeEventos {
     public boolean existeEvento(int anio, int mes, int dia, int hora) {
         return this.misEventos.contains(new Evento(anio,mes,dia,hora));
     }
-    
 
-    public void agregarEvento(int anio, int mes, int dia, int hora) {
+    void agregarEvento(String nombreEvento, int anio, int mes, int dia, int hora) {
         if (existeEvento(anio,mes,dia,hora)){
             
         }else{
-            this.misEventos.add(new Evento(anio,mes,dia,hora));
+            this.misEventos.add(new Evento(nombreEvento,anio,mes,dia,hora));
         }
     }
     

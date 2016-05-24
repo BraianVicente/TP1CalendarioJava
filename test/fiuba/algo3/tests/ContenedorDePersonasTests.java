@@ -37,5 +37,6 @@ public class ContenedorDePersonasTests {
         invitados.add("Pablo");
         cont.agregarEvento("Parcial Datos",invitados,2016,5,23,20);
         Assert.assertTrue(cont.get("Juan").estaOcupado(2016,5,23,20)) ;
+        Assert.assertTrue(cont.get("Pablo").estaOcupado(2016,5,23,20)) ;
     }
 }
