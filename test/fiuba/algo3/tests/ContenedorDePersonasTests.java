@@ -31,7 +31,6 @@ public class ContenedorDePersonasTests {
         ContenedorDePersonas cont = new ContenedorDePersonas() ;
         cont.agregar("Juan");
         cont.agregar(("Pablo"));
-
         ArrayList<String> invitados = new ArrayList();
         invitados.add("Juan");
         invitados.add("Pablo");

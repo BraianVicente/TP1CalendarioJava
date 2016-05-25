@@ -19,8 +19,8 @@ public class ContenedorDeRecursos {
         this.misRecursos = new ArrayList<Recurso>();
     }
 
-	public void agregar(String nombre) {
-		this.misRecursos.add(new Recurso(nombre));
+    public void agregar(String nombre) {
+        this.misRecursos.add(new Recurso(nombre));
     }
 
     public boolean existe(String nombre) {

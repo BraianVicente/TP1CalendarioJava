@@ -14,24 +14,41 @@ import org.junit.Test;
  * @author brahvic
  */
 public class ContenedorDeEventoTests {
- 
+
     @Test
     public void test01ContenedorDeEventosNoTieneEvento(){
         ContenedorDeEventos cont = new ContenedorDeEventos();
-        Assert.assertFalse(cont.existeEvento(2016,5,5,5));
+        Assert.assertFalse(cont.existeEventoEnFecha(2016,5,5,5));
     }
-    
+
     @Test
     public void test02ContenedorDeEventosTieneEvento(){
         ContenedorDeEventos cont = new ContenedorDeEventos();
         cont.agregarEvento("nombreEvento",2016,5,5,5);
-        Assert.assertTrue(cont.existeEvento(2016,5,5,5));
+        Assert.assertTrue(cont.existeEventoEnFecha(2016,5,5,5));
     }
 
     @Test
     public void test03ContenedorDeEventoAgregaEventoSemanal(){
         ContenedorDeEventos cont = new ContenedorDeEventos();
         cont.agregarEvento(2,"nombreEvento",2016,5,5,5);
-        Assert.assertTrue(cont.existeEvento(2016,5,12,5));
+        Assert.assertTrue(cont.existeEventoEnFecha(2016,5,12,5));
+    }
+    
+    @Test
+    public void test04EventoNoAgregadoPorSuperposicion(){
+        ContenedorDeEventos cont = new ContenedorDeEventos();
+        cont.agregarEvento("Hacer TP2", 2016, 5, 12, 5);
+        cont.agregarEvento("Hacer TPDatos", 2016, 5, 12, 5);
+        Assert.assertTrue(cont.existeEventoConNombre("Hacer TP2"));
+        Assert.assertFalse(cont.existeEventoConNombre("Hacer TPDatos"));
+    }
+    
+    @Test
+    public void test05EventoSemanalFinalizaCorrectamente(){
+        ContenedorDeEventos cont = new ContenedorDeEventos();
+        cont.agregarEvento(2,"nombreEvento",2016,5,5,5);
+        Assert.assertFalse(cont.existeEventoEnFecha(2016,5,17,5));
+       
     }
 }

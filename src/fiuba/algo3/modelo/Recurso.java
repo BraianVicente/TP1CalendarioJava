@@ -49,7 +49,7 @@ public class Recurso implements Invitable {
 
     @Override
     public boolean estaOcupado(int anio, int mes, int dia, int hora) {
-        return this.misEventos.existeEvento(anio,mes,dia,hora);
+        return this.misEventos.existeEventoEnFecha(anio,mes,dia,hora);
     }
 
     private Object getNombre() {

@@ -7,6 +7,7 @@ package fiuba.algo3.modelo;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Objects;
 
 /**
  *
@@ -25,13 +26,31 @@ public class Evento {
         this.fecha = new Date(anio,mes,dia,hora,00);
         this.nombreEvento = nombreEvento ;
     }
+
+    Evento(String nombreEvento) {
+        this.nombreEvento = nombreEvento;
+        this.fecha = null ;
+    }
     
     @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof Evento))
             return false;
         Evento evento = (Evento) obj ;
-        return this.getDate().equals(evento.getDate());
+        if((evento.getDate() != null) && (this.getDate() != null)){
+            return this.getDate().equals(evento.getDate());
+        }
+        if((evento.getName() != null ) & (this.getName()!= null)){
+            return this.getName().equals(evento.getName());
+        } 
+        return false ;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 47 * hash + Objects.hashCode(this.fecha);
+        return hash;
     }
 
     private Date getDate() {
@@ -41,12 +60,15 @@ public class Evento {
     private Evento sumarDias(int dias){
         Calendar cal = Calendar.getInstance();
         cal.set(fecha.getYear(), fecha.getMonth(), fecha.getDay(), fecha.getHours(), 00);
-        
         cal.add(Calendar.DAY_OF_MONTH, fecha.getDay()+dias );
         Date newTime = cal.getTime();
         return new Evento(newTime.getYear(),newTime.getMonth(),newTime.getDay(),newTime.getHours());
         
     
+    }
+
+    private String getName() {
+        return this.nombreEvento;
     }
     
 }

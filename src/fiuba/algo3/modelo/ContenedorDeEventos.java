@@ -18,20 +18,29 @@ public class ContenedorDeEventos {
         this.misEventos = new ArrayList();
     }
     
-    public boolean existeEvento(int anio, int mes, int dia, int hora) {
+    public boolean existeEventoEnFecha(int anio, int mes, int dia, int hora) {
         return this.misEventos.contains(new Evento(anio,mes,dia,hora));
     }
 
     public void agregarEvento(String nombreEvento, int anio, int mes, int dia, int hora) {
-        if (existeEvento(anio,mes,dia,hora)){
+        if (existeEventoEnFecha(anio,mes,dia,hora)){
             
         }else{
             this.misEventos.add(new Evento(nombreEvento,anio,mes,dia,hora));
         }
     }
 
-    public void agregarEvento(int semanasRepeticion, String nombreEvento, int i0, int i1, int i2, int i3) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void agregarEvento(int semanasRepeticion, String nombreEvento, int anio, int mes, int dia, int hora) {
+        while (semanasRepeticion>0){
+            
+            this.agregarEvento(nombreEvento, anio, mes, dia+(7*(semanasRepeticion-1)), hora);
+            semanasRepeticion = semanasRepeticion-1;
+        }
+        
+    }
+
+    public boolean existeEventoConNombre(String nombreEvento) {
+        return this.misEventos.contains(new Evento(nombreEvento));
     }
 
     
