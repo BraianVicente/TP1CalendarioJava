@@ -46,5 +46,12 @@ public class ContenedorDeRecursos {
         return false;
      }
 
+    void agregarEvento(int repeticion, String nombre, List<String> invitados, int anio, int mes, int dia, int hora) {
+        while (repeticion > 0){
+            this.agregarEvento(nombre, invitados, anio, mes, dia + ((repeticion-1)*7), hora);
+            repeticion--;
+        }
+    }
+
 
 }

@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author brahvic
  */
-public class Persona implements Invitable {
+public class Persona extends Invitado {
 
     private String nombre ;
     private ContenedorDeEventos misEventos;

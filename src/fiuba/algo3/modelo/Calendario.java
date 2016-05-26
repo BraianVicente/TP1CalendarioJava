@@ -26,10 +26,8 @@ public class Calendario {
     }
 
     public void agregarEventoSemanal(String nombre, int repeticion, List<String> invitados, int anio, int mes, int dia, int hora) {
-        while(repeticion > 0){
-            this.agregarEvento(nombre,invitados,anio,mes,dia + (7*(repeticion-1)),hora);
-            repeticion = repeticion - 1 ;
-        }
+        this.agendaPersonas.agregarEvento(repeticion,nombre,invitados,anio,mes,dia,hora);
+        this.agendaRecursos.agregarEvento(repeticion,nombre,invitados,anio,mes,dia,hora);
     }
 
     public boolean existePersona(String nombre) {

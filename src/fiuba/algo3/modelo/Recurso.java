@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author brahvic
  */
-public class Recurso implements Invitable {
+public class Recurso extends Invitado {
     
     private String nombre ;
     private ContenedorDeEventos misEventos;

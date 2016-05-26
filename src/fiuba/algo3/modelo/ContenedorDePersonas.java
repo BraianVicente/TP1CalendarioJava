@@ -6,7 +6,6 @@
 package fiuba.algo3.modelo;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -33,7 +32,7 @@ public class ContenedorDePersonas {
         for (String nombrePersona : invitados) {
             if (this.misPersonas.contains(new Persona(nombrePersona))){
                 Persona persona;
-                persona =(Persona) this.misPersonas.get(this.misPersonas.indexOf(new Persona(nombrePersona)));
+                persona = this.misPersonas.get(this.misPersonas.indexOf(new Persona(nombrePersona)));
                 persona.agregarEvento(nombre, anio, mes, dia, hora);
             }
         }
@@ -45,6 +44,13 @@ public class ContenedorDePersonas {
             return persona.existeEvento(anio, mes, dia, hora);
         }
         return false;
+    }
+
+    public void agregarEvento(int repeticion, String nombre, List<String> invitados, int anio, int mes, int dia, int hora) {
+        while (repeticion > 0){
+            this.agregarEvento(nombre, invitados, anio, mes, dia + ((repeticion-1)*7), hora);
+            repeticion--;
+        }
     }
     
 }
