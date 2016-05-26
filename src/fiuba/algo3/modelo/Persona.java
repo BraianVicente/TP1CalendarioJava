@@ -13,32 +13,10 @@ import java.util.Objects;
  */
 public class Persona extends Invitado {
 
-    private String nombre ;
-    private ContenedorDeEventos misEventos;
             
     public Persona(String nombre) {
         this.nombre = nombre ;
         this.misEventos = new ContenedorDeEventos();
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (!(obj instanceof Persona))
-            return false;
-        Persona persona = (Persona) obj ;
-        return this.getNombre().equals(persona.getNombre());
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 47 * hash + Objects.hashCode(this.nombre);
-        return hash;
-    }
-
-    @Override
-    public boolean existeEvento(int anio, int mes, int dia, int hora) {
-        return this.misEventos.existeEventoEnFecha(anio,mes,dia,hora);
     }
 
     @Override
@@ -48,13 +26,5 @@ public class Persona extends Invitado {
         }
     }
 
-    @Override
-    public boolean estaOcupado(int anio, int mes, int dia, int hora) {
-        return this.existeEvento(anio, mes, dia, hora);
-    }
-
-    private String getNombre() {
-        return this.nombre;
-    }
 
 }
