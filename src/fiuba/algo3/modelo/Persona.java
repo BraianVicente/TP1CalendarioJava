@@ -43,7 +43,9 @@ public class Persona implements Invitable {
 
     @Override
     public void agregarEvento(String nombreEvento, int anio, int mes, int dia, int hora)  {
-        this.misEventos.agregarEvento(nombreEvento,anio,mes,dia,hora);
+        if (!this.estaOcupado(anio, mes, dia, hora)){
+            this.misEventos.agregarEvento(nombreEvento,anio,mes,dia,hora);
+        }
     }
 
     @Override

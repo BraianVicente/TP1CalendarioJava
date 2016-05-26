@@ -32,11 +32,19 @@ public class ContenedorDeRecursos {
     for (String nombreRecurso : invitados) {
         if (this.misRecursos.contains(new Recurso(nombreRecurso))){
             Recurso recurso;
-            recurso = this.misRecursos.get(this.misRecursos.indexOf(nombreRecurso));
+            recurso = this.misRecursos.get(this.misRecursos.indexOf(new Recurso(nombreRecurso)));
             recurso.agregarEvento(nombre, anio, mes, dia, hora);
         }
     }
     }
+
+    boolean estaOcupado(String nombre, int anio, int mes, int dia, int hora) {
+        if (this.existe(nombre)){
+            Recurso recurso = this.misRecursos.get(this.misRecursos.indexOf(new Recurso(nombre)));
+            return recurso.existeEvento(anio, mes, dia, hora);
+        }
+        return false;
+     }
 
 
 }

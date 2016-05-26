@@ -130,22 +130,21 @@ public class CalendarioTests {
 		Assert.assertTrue(cal.estaOcupado("juan", 2016, 5, 4, 10));
 	}
 
-    @Test(expected=RecursoOcupadoException.class)
-    public void test08recursoNoAdmiteSuperposicion() {
+	@Test(expected=RecursoOcupadoException.class)
+	public void test08recursoNoAdmiteSuperposicion() {
 
-        List<String> invitados = new ArrayList<>();
-        invitados.add("juan");
-        invitados.add("proyector");
+		List<String> invitados = new ArrayList<>();
+                invitados.add("juan");
+		invitados.add("proyector");
 
-        Calendario cal = new Calendario();
-        cal.agregarPersona("juan");
-        cal.agregarRecurso("proyector");
+		Calendario cal = new Calendario();
+		cal.agregarPersona("juan");
+		cal.agregarRecurso("proyector");
 
-        cal.agregarEventoSemanal("Exposicion TP", 2, invitados, 2016, 5, 4, 10);
+		cal.agregarEventoSemanal("Exposicion TP", 2, invitados, 2016, 5, 4, 10);
 
-        Assert.assertTrue(cal.estaOcupado("proyector", 2016, 5, 11, 10));
+		Assert.assertTrue(cal.estaOcupado("proyector", 2016, 5, 11, 10));
 
-        cal.agregarEvento("Clase Teorica", invitados, 2016, 5, 11, 10);
-    }
-
+		cal.agregarEvento("Clase Teorica", invitados, 2016, 5, 11, 10);
+	}
 }

@@ -39,7 +39,7 @@ public class Recurso implements Invitable {
     
     @Override
     public boolean existeEvento(int anio, int mes, int dia, int hora) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.misEventos.existeEventoEnFecha(anio,mes,dia,hora);
     }
 
     @Override

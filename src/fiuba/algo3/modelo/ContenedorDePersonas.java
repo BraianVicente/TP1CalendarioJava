@@ -29,7 +29,7 @@ public class ContenedorDePersonas {
        return this.misPersonas.contains(new Persona(nombre));
     }
 
-    void agregarEvento(String nombre, List<String> invitados, int anio, int mes, int dia, int hora) {
+    public void agregarEvento(String nombre, List<String> invitados, int anio, int mes, int dia, int hora) {
         for (String nombrePersona : invitados) {
             if (this.misPersonas.contains(new Persona(nombrePersona))){
                 Persona persona;
@@ -37,6 +37,14 @@ public class ContenedorDePersonas {
                 persona.agregarEvento(nombre, anio, mes, dia, hora);
             }
         }
+    }
+    
+    public boolean estaOcupado(String nombre,int anio,int mes,int dia, int hora){
+        if (this.existe(nombre)){
+            Persona persona = this.misPersonas.get(this.misPersonas.indexOf(new Persona(nombre)));
+            return persona.existeEvento(anio, mes, dia, hora);
+        }
+        return false;
     }
     
 }
