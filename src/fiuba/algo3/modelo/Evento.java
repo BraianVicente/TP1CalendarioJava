@@ -56,16 +56,6 @@ public class Evento {
     private Date getDate() {
         return  this.fecha;
     }
-    
-    private Evento sumarDias(int dias){
-        Calendar cal = Calendar.getInstance();
-        cal.set(fecha.getYear(), fecha.getMonth(), fecha.getDay(), fecha.getHours(), 00);
-        cal.add(Calendar.DAY_OF_MONTH, fecha.getDay()+dias );
-        Date newTime = cal.getTime();
-        return new Evento(newTime.getYear(),newTime.getMonth(),newTime.getDay(),newTime.getHours());
-        
-    
-    }
 
     private String getName() {
         return this.nombreEvento;

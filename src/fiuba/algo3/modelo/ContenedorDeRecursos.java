@@ -6,6 +6,7 @@
 package fiuba.algo3.modelo;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -24,7 +25,18 @@ public class ContenedorDeRecursos {
     }
 
     public boolean existe(String nombre) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return this.misRecursos.contains(new Recurso(nombre));
     }
+
+    void agregarEvento(String nombre, List<String> invitados, int anio, int mes, int dia, int hora) {
+    for (String nombreRecurso : invitados) {
+        if (this.misRecursos.contains(new Recurso(nombreRecurso))){
+            Recurso recurso;
+            recurso = this.misRecursos.get(this.misRecursos.indexOf(nombreRecurso));
+            recurso.agregarEvento(nombre, anio, mes, dia, hora);
+        }
+    }
+    }
+
 
 }

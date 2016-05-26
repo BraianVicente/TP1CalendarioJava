@@ -21,10 +21,15 @@ public class Calendario {
     }
 
     public void agregarEvento(String nombre, List<String> invitados, int anio, int mes, int dia, int hora) {
+        this.agendaPersonas.agregarEvento(nombre,invitados,anio,mes,dia,hora);
+        this.agendaRecursos.agregarEvento(nombre,invitados,anio,mes,dia,hora);
     }
 
     public void agregarEventoSemanal(String nombre, int repeticion, List<String> invitados, int anio, int mes, int dia, int hora) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        while(repeticion > 0){
+            this.agregarEvento(nombre,invitados,anio,mes,dia + (7*(repeticion-1)),hora);
+            repeticion = repeticion - 1 ;
+        }
     }
 
     public boolean existePersona(String nombre) {
@@ -36,7 +41,6 @@ public class Calendario {
     }
 
     public boolean estaOcupado(String nombre, int anio, int mes, int dia, int hora) {
-        return this.agendaRecursos.existe(nombre) ;
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.    }
     }
-
 }

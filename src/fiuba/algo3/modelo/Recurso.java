@@ -44,7 +44,11 @@ public class Recurso implements Invitable {
 
     @Override
     public void agregarEvento(String nombreEvento, int anio, int mes, int dia, int hora) {
-        this.misEventos.agregarEvento(nombreEvento, anio, mes, dia, hora);
+        try {
+            this.misEventos.agregarEvento(nombreEvento, anio, mes, dia, hora);
+        } catch (SuperposicionEventoException e) {
+            throw new RecursoOcupadoException() ;
+        }
     }
 
     @Override

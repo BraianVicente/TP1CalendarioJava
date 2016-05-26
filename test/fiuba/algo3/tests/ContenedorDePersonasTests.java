@@ -5,11 +5,9 @@
  */
 package fiuba.algo3.tests;
 
-import java.util.ArrayList;
+import fiuba.algo3.modelo.ContenedorDePersonas;
 import org.junit.Assert;
 import org.junit.Test;
-
-import fiuba.algo3.modelo.ContenedorDePersonas;
 
 /**
  *
@@ -24,18 +22,6 @@ public class ContenedorDePersonasTests {
         Assert.assertFalse(cont.existe("Juan")) ;
         cont.agregar("Juan");
         Assert.assertTrue(cont.existe("Juan")) ;
-    }
-
-    @Test
-    public void test02agregarEventoVariasPersonas(){
-        ContenedorDePersonas cont = new ContenedorDePersonas() ;
-        cont.agregar("Juan");
-        cont.agregar(("Pablo"));
-        ArrayList<String> invitados = new ArrayList();
-        invitados.add("Juan");
-        invitados.add("Pablo");
-        cont.agregarEvento("Parcial Datos",invitados,2016,5,23,20);
-        Assert.assertTrue(cont.get("Juan").estaOcupado(2016,5,23,20)) ;
-        Assert.assertTrue(cont.get("Pablo").estaOcupado(2016,5,23,20)) ;
-    }
+    }    
+    
 }

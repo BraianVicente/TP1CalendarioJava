@@ -6,6 +6,7 @@
 package fiuba.algo3.tests;
 
 import fiuba.algo3.modelo.ContenedorDeEventos;
+import fiuba.algo3.modelo.SuperposicionEventoException ;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -35,13 +36,12 @@ public class ContenedorDeEventoTests {
         Assert.assertTrue(cont.existeEventoEnFecha(2016,5,12,5));
     }
     
-    @Test
+    @Test(expected=SuperposicionEventoException.class)
     public void test04EventoNoAgregadoPorSuperposicion(){
         ContenedorDeEventos cont = new ContenedorDeEventos();
         cont.agregarEvento("Hacer TP2", 2016, 5, 12, 5);
-        cont.agregarEvento("Hacer TPDatos", 2016, 5, 12, 5);
         Assert.assertTrue(cont.existeEventoConNombre("Hacer TP2"));
-        Assert.assertFalse(cont.existeEventoConNombre("Hacer TPDatos"));
+        cont.agregarEvento("Hacer TPDatos", 2016, 5, 12, 5);
     }
     
     @Test
