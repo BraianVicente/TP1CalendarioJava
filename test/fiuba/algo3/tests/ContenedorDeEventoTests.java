@@ -40,7 +40,7 @@ public class ContenedorDeEventoTests {
     public void test04EventoNoAgregadoPorSuperposicion(){
         ContenedorDeEventos cont = new ContenedorDeEventos();
         cont.agregarEvento("Hacer TP2", 2016, 5, 12, 5);
-        Assert.assertTrue(cont.existeEventoConNombre("Hacer TP2"));
+        Assert.assertTrue(cont.existeEventoEnFecha( 2016, 5, 12, 5));
         cont.agregarEvento("Hacer TPDatos", 2016, 5, 12, 5);
     }
 

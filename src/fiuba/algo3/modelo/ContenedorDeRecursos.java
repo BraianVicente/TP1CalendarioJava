@@ -41,7 +41,7 @@ public class ContenedorDeRecursos {
     boolean estaOcupado(String nombre, int anio, int mes, int dia, int hora) {
         if (this.existe(nombre)){
             Recurso recurso = this.misRecursos.get(this.misRecursos.indexOf(new Recurso(nombre)));
-            return recurso.existeEvento(anio, mes, dia, hora);
+            return recurso.estaOcupado(anio, mes, dia, hora);
         }
         return false;
      }

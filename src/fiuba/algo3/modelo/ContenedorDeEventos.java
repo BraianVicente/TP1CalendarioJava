@@ -40,10 +40,5 @@ public class ContenedorDeEventos {
 
     }
 
-    public boolean existeEventoConNombre(String nombreEvento) {
-        return this.misEventos.contains(new Evento(nombreEvento));
-    }
-
-
 
 }

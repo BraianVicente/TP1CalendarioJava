@@ -5,7 +5,6 @@
  */
 package fiuba.algo3.modelo;
 
-import java.util.Calendar;
 import java.util.Date;
 import java.util.Objects;
 
@@ -39,9 +38,6 @@ public class Evento {
         Evento evento = (Evento) obj ;
         if((evento.getDate() != null) && (this.getDate() != null)){
             return this.getDate().equals(evento.getDate());
-        }
-        if((evento.getName() != null ) & (this.getName()!= null)){
-            return this.getName().equals(evento.getName());
         }
         return false ;
     }
