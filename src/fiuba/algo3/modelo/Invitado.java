@@ -16,16 +16,21 @@ public abstract class Invitado {
     protected String nombre ;
     protected ContenedorDeEventos misEventos;
 
+    public Invitado(String nombre){
+        this.nombre = nombre ;
+        this.misEventos = new ContenedorDeEventos();
+    }
+
     public abstract void agregarEvento(String nombreEvento, int anio, int mes, int dia, int hora) ;
 
     public  boolean existeEvento(int anio, int mes, int dia, int hora) {
         return this.misEventos.existeEventoEnFecha(anio,mes,dia,hora);
     }
-    
+
     public  boolean estaOcupado(int anio, int mes, int dia, int hora) {
         return this.existeEvento(anio, mes, dia, hora);
     }
-    
+
     protected String getNombre() {
         return this.nombre;
     }
@@ -44,5 +49,5 @@ public abstract class Invitado {
         hash = 97 * hash + Objects.hashCode(this.nombre);
         return hash;
     }
-    
+
 }

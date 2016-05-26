@@ -14,19 +14,19 @@ import org.junit.Test;
  * @author brahvic
  */
 public class RecursoTests {
-    
+
     @Test
     public void test01RecursoIgualdadConNombre(){
         Recurso rec = new Recurso("proyector");
         Assert.assertTrue(rec.equals(new Recurso("proyector")));
     }
-    
-    @Test 
+
+    @Test
     public void test02RecursoFallaIgualdadDistintoNombre(){
         Recurso rec = new Recurso("proyector");
         Assert.assertFalse(rec.equals(new Recurso("radio")));
     }
-    
+
     @Test
     public void test03RecursoNoTieneEventosAlCrearse(){
         Recurso rec = new Recurso("proyector");
@@ -37,7 +37,6 @@ public class RecursoTests {
     public void test04RecursoAgregaEvento(){
         Recurso rec = new Recurso("proyector");
         rec.agregarEvento("unNombre", 2016, 1, 12, 18);
-
         Assert.assertTrue(rec.estaOcupado(2016, 1, 12, 18));
     }
 

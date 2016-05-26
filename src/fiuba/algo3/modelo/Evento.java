@@ -31,7 +31,7 @@ public class Evento {
         this.nombreEvento = nombreEvento;
         this.fecha = null ;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof Evento))
@@ -42,7 +42,7 @@ public class Evento {
         }
         if((evento.getName() != null ) & (this.getName()!= null)){
             return this.getName().equals(evento.getName());
-        } 
+        }
         return false ;
     }
 
@@ -60,5 +60,5 @@ public class Evento {
     private String getName() {
         return this.nombreEvento;
     }
-    
+
 }

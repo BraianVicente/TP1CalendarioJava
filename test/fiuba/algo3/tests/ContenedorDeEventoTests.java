@@ -35,7 +35,7 @@ public class ContenedorDeEventoTests {
         cont.agregarEvento(2,"nombreEvento",2016,5,5,5);
         Assert.assertTrue(cont.existeEventoEnFecha(2016,5,12,5));
     }
-    
+
     @Test(expected=SuperposicionEventoException.class)
     public void test04EventoNoAgregadoPorSuperposicion(){
         ContenedorDeEventos cont = new ContenedorDeEventos();
@@ -43,12 +43,12 @@ public class ContenedorDeEventoTests {
         Assert.assertTrue(cont.existeEventoConNombre("Hacer TP2"));
         cont.agregarEvento("Hacer TPDatos", 2016, 5, 12, 5);
     }
-    
+
     @Test
     public void test05EventoSemanalFinalizaCorrectamente(){
         ContenedorDeEventos cont = new ContenedorDeEventos();
         cont.agregarEvento(2,"nombreEvento",2016,5,5,5);
         Assert.assertFalse(cont.existeEventoEnFecha(2016,5,17,5));
-       
+
     }
 }

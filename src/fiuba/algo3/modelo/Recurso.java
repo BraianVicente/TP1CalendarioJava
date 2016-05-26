@@ -10,14 +10,12 @@ package fiuba.algo3.modelo;
  * @author brahvic
  */
 public class Recurso extends Invitado {
-    
-    
+
+
     public Recurso(String nombre){
-        this.nombre = nombre ;
-        this.misEventos = new ContenedorDeEventos();
+        super(nombre);
     }
-    
-    
+
     @Override
     public  void agregarEvento(String nombreEvento, int anio, int mes, int dia, int hora) {
         try {

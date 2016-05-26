@@ -39,12 +39,6 @@ public class Calendario {
     }
 
     public boolean estaOcupado(String nombre, int anio, int mes, int dia, int hora) {
-        if (this.existePersona(nombre)){
-            return this.agendaPersonas.estaOcupado(nombre, anio, mes, dia, hora);
-        }
-        if (this.existeRecurso(nombre)){
-            return this.agendaRecursos.estaOcupado(nombre, anio, mes, dia, hora);
-        }
-        return false ;
+        return this.agendaRecursos.estaOcupado(nombre, anio, mes, dia, hora) || this.agendaPersonas.estaOcupado(nombre, anio, mes, dia, hora) ;
     }
 }

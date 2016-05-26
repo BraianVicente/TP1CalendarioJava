@@ -13,13 +13,13 @@ import java.util.List;
  * @author brahvic
  */
 public class ContenedorDePersonas {
-    
+
     private ArrayList<Persona> misPersonas ;
-    
+
     public ContenedorDePersonas(){
         this.misPersonas = new ArrayList<Persona>() {} ;
     }
-    
+
     public void agregar(String nombre) {
        this.misPersonas.add(new Persona(nombre)) ;
     }
@@ -37,7 +37,7 @@ public class ContenedorDePersonas {
             }
         }
     }
-    
+
     public boolean estaOcupado(String nombre,int anio,int mes,int dia, int hora){
         if (this.existe(nombre)){
             Persona persona = this.misPersonas.get(this.misPersonas.indexOf(new Persona(nombre)));
@@ -52,5 +52,5 @@ public class ContenedorDePersonas {
             repeticion--;
         }
     }
-    
+
 }

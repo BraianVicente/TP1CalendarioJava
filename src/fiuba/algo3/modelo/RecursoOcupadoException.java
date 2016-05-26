@@ -10,5 +10,5 @@ package fiuba.algo3.modelo;
  * @author brahvic
  */
 public class RecursoOcupadoException extends RuntimeException {
-    
+
 }

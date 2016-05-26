@@ -14,7 +14,7 @@ import org.junit.Test;
  * @author brahvic
  */
 public class ContenedorDeRecursosTests {
-    
+
     @Test
     public void test01agregarRecurso(){
         ContenedorDeRecursos cont = new ContenedorDeRecursos() ;
@@ -22,6 +22,6 @@ public class ContenedorDeRecursosTests {
         cont.agregar("proyector");
         Assert.assertTrue(cont.existe("proyector")) ;
     }
-    
-    
+
+
 }

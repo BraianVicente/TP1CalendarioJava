@@ -5,18 +5,15 @@
  */
 package fiuba.algo3.modelo;
 
-import java.util.Objects;
-
 /**
  *
  * @author brahvic
  */
 public class Persona extends Invitado {
 
-            
+
     public Persona(String nombre) {
-        this.nombre = nombre ;
-        this.misEventos = new ContenedorDeEventos();
+        super(nombre) ;
     }
 
     @Override
@@ -25,6 +22,5 @@ public class Persona extends Invitado {
             this.misEventos.agregarEvento(nombreEvento,anio,mes,dia,hora);
         }
     }
-
 
 }

@@ -18,7 +18,7 @@ public class ContenedorDeEventos {
     public ContenedorDeEventos(){
         this.misEventos = new ArrayList();
     }
-    
+
     public boolean existeEventoEnFecha(int anio, int mes, int dia, int hora) {
         return this.misEventos.contains(new Evento(anio,mes,dia,hora));
     }
@@ -33,17 +33,17 @@ public class ContenedorDeEventos {
 
     public void agregarEvento(int semanasRepeticion, String nombreEvento, int anio, int mes, int dia, int hora) throws SuperposicionEventoException {
         while (semanasRepeticion>0){
-            
+
             this.agregarEvento(nombreEvento, anio, mes, dia+(7*(semanasRepeticion-1)), hora);
             semanasRepeticion = semanasRepeticion-1;
         }
-        
+
     }
 
     public boolean existeEventoConNombre(String nombreEvento) {
         return this.misEventos.contains(new Evento(nombreEvento));
     }
 
-    
-    
+
+
 }

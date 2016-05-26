@@ -23,8 +23,8 @@ public class ContenedorDePersonasTests {
         Assert.assertFalse(cont.existe("Juan")) ;
         cont.agregar("Juan");
         Assert.assertTrue(cont.existe("Juan")) ;
-    }    
-    
+    }
+
     @Test
     public void test02agregarEvento(){
         ContenedorDePersonas cont = new ContenedorDePersonas();
@@ -34,7 +34,7 @@ public class ContenedorDePersonasTests {
         cont.agregarEvento("unEvento", inv, 2016, 5, 6, 15);
         Assert.assertTrue(cont.estaOcupado("Juan", 2016, 5, 6, 15));
     }
-    
+
     @Test
     public void test03agregarEventoSemanal(){
         ContenedorDePersonas cont = new ContenedorDePersonas();
@@ -44,8 +44,7 @@ public class ContenedorDePersonasTests {
         cont.agregarEvento(2,"unEvento", inv, 2016, 5, 6, 15);
         Assert.assertTrue(cont.estaOcupado("Juan", 2016, 5, 13, 15));
         Assert.assertTrue(cont.estaOcupado("Juan", 2016, 5, 6, 15));
-
     }
-    
+
 }
-    
+
