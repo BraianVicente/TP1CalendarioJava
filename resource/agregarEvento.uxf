@@ -80,7 +80,7 @@ agregarEvento
       <w>170</w>
       <h>30</h>
     </coordinates>
-    <panel_attributes>_:contenedorPersona_</panel_attributes>
+    <panel_attributes>_:contenedorInvitados_</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -240,8 +240,8 @@ agregarEvento
     <coordinates>
       <x>320</x>
       <y>70</y>
-      <w>630</w>
-      <h>350</h>
+      <w>470</w>
+      <h>280</h>
     </coordinates>
     <panel_attributes>for each persona in invitados
 

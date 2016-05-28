@@ -15,11 +15,4 @@ public class Persona extends Invitado {
         super(nombre) ;
     }
 
-    @Override
-    public void agregarEvento(String nombreEvento, int anio, int mes, int dia, int hora)  {
-        if (!this.estaOcupado(anio, mes, dia, hora)){
-            this.misEventos.agregarEvento(nombreEvento,anio,mes,dia,hora);
-        }
-    }
-
 }

@@ -11,7 +11,7 @@ import java.util.Objects;
  *
  * @author brahvic
  */
-public abstract class Invitado {
+public class Invitado {
 
     protected String nombre ;
     protected ContenedorDeEventos misEventos;
@@ -21,7 +21,11 @@ public abstract class Invitado {
         this.misEventos = new ContenedorDeEventos();
     }
 
-    public abstract void agregarEvento(String nombreEvento, int anio, int mes, int dia, int hora) ;
+    public void agregarEvento(String nombreEvento, int anio, int mes, int dia, int hora){
+     if (!this.estaOcupado(anio, mes, dia, hora)){
+            this.misEventos.agregarEvento(nombreEvento,anio,mes,dia,hora);
+        }   
+    }
 
     public  boolean existeEvento(int anio, int mes, int dia, int hora) {
         return this.misEventos.existeEventoEnFecha(anio,mes,dia,hora);

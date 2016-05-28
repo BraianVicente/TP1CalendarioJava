@@ -4,41 +4,37 @@ import java.util.List;
 
 public class Calendario {
 
-    private  ContenedorDePersonas agendaPersonas;
-    private  ContenedorDeRecursos agendaRecursos;
+    private  ContenedorDeInvitados agendaInvitados;
 
     public Calendario (){
-        this.agendaPersonas = new ContenedorDePersonas() ;
-        this.agendaRecursos = new ContenedorDeRecursos() ;
+        this.agendaInvitados = new ContenedorDeInvitados() ;
     }
 
     public void agregarPersona(String nombre) {
-       this.agendaPersonas.agregar(nombre);
+       this.agendaInvitados.agregarPersona(nombre);
     }
 
     public void agregarRecurso(String nombre) {
-        this.agendaRecursos.agregar(nombre) ;
+        this.agendaInvitados.agregarRecurso(nombre) ;
     }
 
     public void agregarEvento(String nombre, List<String> invitados, int anio, int mes, int dia, int hora) {
-        this.agendaPersonas.agregarEvento(nombre,invitados,anio,mes,dia,hora);
-        this.agendaRecursos.agregarEvento(nombre,invitados,anio,mes,dia,hora);
+        this.agendaInvitados.agregarEvento(nombre,invitados,anio,mes,dia,hora);
     }
 
     public void agregarEventoSemanal(String nombre, int repeticion, List<String> invitados, int anio, int mes, int dia, int hora) {
-        this.agendaPersonas.agregarEvento(repeticion,nombre,invitados,anio,mes,dia,hora);
-        this.agendaRecursos.agregarEvento(repeticion,nombre,invitados,anio,mes,dia,hora);
+        this.agendaInvitados.agregarEvento(repeticion,nombre,invitados,anio,mes,dia,hora);
     }
 
     public boolean existePersona(String nombre) {
-        return this.agendaPersonas.existe(nombre) ;
+        return this.agendaInvitados.existePersona(nombre) ;
     }
 
     public boolean existeRecurso(String nombre) {
-        return this.agendaRecursos.existe(nombre) ;
+        return this.agendaInvitados.existeRecurso(nombre) ;
     }
 
     public boolean estaOcupado(String nombre, int anio, int mes, int dia, int hora) {
-        return this.agendaRecursos.estaOcupado(nombre, anio, mes, dia, hora) || this.agendaPersonas.estaOcupado(nombre, anio, mes, dia, hora) ;
+        return this.agendaInvitados.estaOcupado(nombre, anio, mes, dia, hora) ;
     }
 }
